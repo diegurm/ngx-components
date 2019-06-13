@@ -1,0 +1,18 @@
+<div class="field">
+  <label class="label">Autocomplete</label>
+  <div class="control">
+    <div class="ui fluid search selection dropdown"
+         [ngClass]="{ 'active visible' : isActive}"
+         (click)="onClick()">
+      <input type="hidden" name="country" value="">
+      <i class="dropdown icon"></i>
+      <input class="search" [formControl]="searchCtrl">
+      <div class="default text">Pesquisar...</div>
+      <div class="menu" [ngClass]="{ 'visible block':  isActive}" tabindex="-1">
+        <div class="item">Choice 1</div>
+        <div class="item">Choice 2</div>
+        <div class="item">Choice 3</div>
+      </div>
+    </div>
+  </div>
+</div>
