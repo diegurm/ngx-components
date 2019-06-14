@@ -27,10 +27,7 @@ export class AppComponent implements OnInit{
     fb: FormBuilder
   ) {
     this.form = fb.group({
-      dropdownList: ['', Validators.compose([
-          Validators.required,
-        ]
-      )]
+      dropdownList:['', Validators.required ]
     });
   }
 

@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {DropDownList, EnumControlType} from '../component';
 
 // @ts-ignore
 @Component({
@@ -8,21 +8,12 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./dropdown-list.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DropdownListComponent implements OnInit {
-
-  @Input()
-  controlName: string;
-
-  @Input()
-  label: string;
-
-  @Input()
-  required: boolean;
-
-  @Input()
-  options: any[];
+export class DropdownListComponent extends DropDownList implements OnInit {
 
   constructor() {
+    super();
+
+    this.type = EnumControlType.TDropDownList;
   }
 
   ngOnInit() {

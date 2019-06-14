@@ -8,7 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 
-import { MatSelectModule } from '@angular/material';
+import {MatIconModule, MatSelectModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
@@ -24,12 +24,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    
-    //Material
+    // Material
     MatSelectModule,
+    MatIconModule,
 
     FontAwesomeModule,
     ReactiveFormsModule,
+
     // Add this
   ],
   providers: [],

@@ -1,6 +1,6 @@
 <div style="padding: 60px; margin: 0 auto">
   <form action="" [formGroup]="form">
-    <dropdown-list controlName="dropdownList" label="DropdownList" [options]="origemMercadoria"></dropdown-list>
+    <dropdown-list [control]="form.get('dropdownList')" label="DropdownList" [requerid]="true" [options]="origemMercadoria"></dropdown-list>
   </form>
 </div>
 
