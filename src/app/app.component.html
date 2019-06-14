@@ -1,8 +1,7 @@
 <div style="padding: 60px; margin: 0 auto">
-  <auto-complete></auto-complete>
-
-  <dropdown-list label="DropdownList"
-                 required="true"
-                 [data]="[{ value: 'F', label: 'Feminino'}, { value: 'M', label: 'Masculino' }]"></dropdown-list>
-
+  <form action="" [formGroup]="form">
+    <dropdown-list controlName="dropdownList" label="DropdownList" [options]="origemMercadoria"></dropdown-list>
+  </form>
 </div>
+
+

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs/operators';
-import { query } from '@angular/animations';
-import { Observable, timer } from 'rxjs';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'auto-complete',

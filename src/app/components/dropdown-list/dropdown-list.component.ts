@@ -1,41 +1,30 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { fromEvent} from 'rxjs';
+import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { fromEvent } from 'rxjs';
 
+// @ts-ignore
 @Component({
   selector: 'dropdown-list',
   templateUrl: './dropdown-list.component.html',
-  styleUrls: ['./dropdown-list.component.scss']
+  styleUrls: ['./dropdown-list.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DropdownListComponent implements OnInit {
 
-  @ViewChild('dropdownList') dropdownList: ElementRef;
+  @Input()
+  controlName: string;
 
   @Input()
   label: string;
+
   @Input()
   required: boolean;
 
   @Input()
-  data: any[];
-
-  focus = false;
+  options: any[];
 
   constructor() {
   }
 
   ngOnInit() {
-    fromEvent(this.dropdownList.nativeElement, 'focus').subscribe((el) => {
-      console.log(el);
-      this.focus = true;
-    });
-  }
-
-
-  setMyStyles() {
-    let styles = {
-      'background-color': this.focus ? 'red' : 'transparent',
-      'font-weight': this.focus ? 'bold' : 'normal'
-    };
-    return this.focus ? styles : {};
   }
 }

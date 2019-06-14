@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 // Add these
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
+
+
+import { MatSelectModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
@@ -19,6 +23,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    
+    //Material
+    MatSelectModule,
+
     FontAwesomeModule,
     ReactiveFormsModule,
     // Add this
