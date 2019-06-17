@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { AutoComplete } from '../component';
 
 
 @Component({
@@ -10,17 +11,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./autocomplete.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AutocompleteComponent implements OnInit {
-
-  isActive: boolean = false;
-  isFiltered: boolean = false;
+export class AutocompleteComponent extends AutoComplete implements OnInit {
   isLoading: boolean = false;
 
   searchCtrl = new FormControl('');
   $itens: Observable<any[]>;
 
   constructor() {
-    this.$itens = this.searchCtrl.valueChanges
+    super();
+  }
+
+  ngOnInit() {
+    this.$itens = this.control.valueChanges
       .pipe(
         startWith(''),
         debounceTime(200),
@@ -29,14 +31,6 @@ export class AutocompleteComponent implements OnInit {
           return [];
         })
       );
-  }
-
-  ngOnInit() {
-
-  }
-
-  onClick() {
-    this.isActive = !this.isActive;
   }
 
 }

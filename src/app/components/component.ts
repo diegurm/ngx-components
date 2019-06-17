@@ -1,5 +1,5 @@
-import {FormControl} from '@angular/forms';
-import {Input} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Input } from '@angular/core';
 
 export enum EnumControlType {
   TTextEdit = 'TextEdit',
@@ -59,7 +59,9 @@ export abstract class DropDownList extends ComponentAbstract {
   options: any[];
 }
 
-export class AutoComplete {
+export class AutoComplete extends ComponentAbstract {
+  @Input()
+  options: any[];
 } // async api
 export class MultiSelect {
 } // user input

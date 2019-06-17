@@ -27,7 +27,8 @@ export class AppComponent implements OnInit{
     fb: FormBuilder
   ) {
     this.form = fb.group({
-      dropdownList:['', Validators.required ]
+      dropdownList:['', Validators.required],
+      autocomplete: ['', Validators.required]
     });
   }
 

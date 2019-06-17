@@ -1,6 +1,7 @@
 <div style="padding: 60px; margin: 0 auto">
   <form action="" [formGroup]="form">
-    <dropdown-list [control]="form.get('dropdownList')" label="DropdownList" [requerid]="true" [options]="origemMercadoria"></dropdown-list>
+    <auto-complete [control]="form.get('autocomplete')" label="Autocomplete" [required]="true" [options]="origemMercadoria"></auto-complete>
+    <dropdown-list [control]="form.get('dropdownList')" label="DropdownList" [required]="true" [options]="origemMercadoria"></dropdown-list>
   </form>
 </div>
 
