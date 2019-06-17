@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { DropdownListComponent } from './components/dropdown-list/dropdown-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     // Material
     MatSelectModule,
     MatIconModule,

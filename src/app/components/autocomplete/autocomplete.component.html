@@ -5,8 +5,8 @@
                               [matAutocomplete]="auto"
                               [required]="required">
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let option of options" [value]="option">
-      {{ option.description }}
+    <mat-option *ngFor="let item of $itens | async" [value]="item">
+      {{ item?.descricao }}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
