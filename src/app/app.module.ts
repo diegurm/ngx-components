@@ -8,7 +8,14 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 
-import { MatAutocompleteModule, MatIconModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatSelectModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
@@ -34,6 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatInputModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
 
     // Add this
   ],

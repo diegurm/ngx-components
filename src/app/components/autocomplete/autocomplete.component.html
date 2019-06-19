@@ -4,9 +4,16 @@
                               [formControl]="control"
                               [matAutocomplete]="auto"
                               [required]="required">
-  <mat-autocomplete #auto="matAutocomplete">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWithFn.bind(this)">
     <mat-option *ngFor="let item of $itens | async" [value]="item">
-      {{ item?.descricao }}
+      {{ item?.codigo }} - {{ item?.descricaoCompleta }}
     </mat-option>
   </mat-autocomplete>
+  <div matSuffix *ngIf="isLoading">
+    <mat-spinner [diameter]="20"></mat-spinner>
+  </div>
+  <button matSuffix *ngIf="!isLoading && !$itens" mat-button mat-icon-button aria-label="Remover">
+    <mat-icon>close</mat-icon>
+  </button>
+
 </mat-form-field>
