@@ -18,7 +18,7 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import {AutocompleteComponent, HighlightPipe} from './components/autocomplete/autocomplete.component';
 import { DropdownListComponent } from './components/dropdown-list/dropdown-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,6 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
+    HighlightPipe,
     AutocompleteComponent,
     DropdownListComponent,
   ],

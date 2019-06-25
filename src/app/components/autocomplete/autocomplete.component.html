@@ -8,7 +8,7 @@
                     [displayWith]="displayWithFn.bind(this)"
                     (optionSelected)="selectedOption($event)">
     <mat-option *ngFor="let item of itens" [value]="item">
-      {{ item?.codigo }} - {{ item?.descricaoCompleta }}
+      <span [innerHTML]="item?.descricaoCompleta | highlight: toHighlight"></span>
     </mat-option>
   </mat-autocomplete>
   <div matSuffix *ngIf="isLoading">
