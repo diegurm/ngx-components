@@ -1,6 +1,6 @@
 <div style="padding: 60px; margin: 0 auto">
   <form action="" [formGroup]="form">
-    <auto-complete [control]="form.get('autocomplete')" label="Autocomplete" fieldView="descricao" [required]="true"></auto-complete>
+    <auto-complete [control]="form.get('autocomplete')" label="Autocomplete" [required]="true"></auto-complete>
     <dropdown-list [control]="form.get('dropdownList')" label="DropdownList" [required]="true" [options]="origemMercadoria"></dropdown-list>
   </form>
 </div>
