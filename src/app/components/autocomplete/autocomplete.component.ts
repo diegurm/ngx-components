@@ -43,7 +43,7 @@ export class AutocompleteComponent extends AutoComplete implements OnInit {
         debounceTime(300),
         distinctUntilChanged(),
         tap(() => this.isLoading = true),
-        switchMap(searchText => this._filter(searchText.trim())),
+        switchMap(searchText => this._filter(searchText || '')),
         tap(() => this.isLoading = false)
       );
   }

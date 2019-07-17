@@ -9,6 +9,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'ngx-apollo-compoments';
 
+  config = [
+    {
+      type: 'input',
+      label: 'Full name',
+      name: 'name',
+      placeholder: 'Enter your name',
+    },
+    {
+      type: 'select',
+      label: 'Favourite food',
+      name: 'food',
+      options: ['Pizza', 'Hot Dogs', 'Knakworstje', 'Coffee'],
+      placeholder: 'Select an option',
+    },
+    {
+      label: 'Submit',
+      name: 'submit',
+      type: 'button',
+    },
+  ];
+
   form: FormGroup;
 
   origemMercadoria: any[] = [

@@ -1,15 +1,14 @@
 <mat-form-field appearance="outline">
   <mat-label>{{ label }}</mat-label>
   <input type="text" matInput
-        [placeholder]="placeholder"
-        [formControl]="control"
-        [matAutocomplete]="auto"
-        [required]="required">
-        <div *ngIf="isLoading">
-          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </div>
-  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWithFn.bind(this)"
-    (optionSelected)="selectedOption($event)">
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [matAutocomplete]="auto"
+    [required]="required">
+
+    <mat-autocomplete #auto="matAutocomplete"
+      [displayWith]="displayWithFn.bind(this)"
+      (optionSelected)="selectedOption($event)">
 
     <mat-option *ngIf="isLoading && !selectedItem" (click)="$event.stopPropagation();" tabindex="-1">
       <mat-icon>search</mat-icon>Pesquisando...
@@ -21,17 +20,15 @@
       Criar novo
     </mat-option>
     -->
-    <mat-option *ngIf="searchFailed" style="background-color: crimson; color: #FFF;" (click)="$event.stopPropagation();" tabindex="-1">
+    <mat-option *ngIf="searchFailed" style="background-color: crimson; color: #FFF;" (click)="$event.stopPropagation();"
+      tabindex="-1">
       <mat-icon>cancel</mat-icon>
       Não possivel atender a sua solicitação
     </mat-option>
     <mat-option *ngFor="let item of $itens | async" [value]="item">
-      <span>{{ item.codigo }} - <span [innerHTML]="item?.descricaoCompleta | highlight: toHighlight"></span></span>
+      <span>{{ item?.codigo }} - <span [innerHTML]="item?.descricaoCompleta | highlight: toHighlight"></span></span>
     </mat-option>
-
-
   </mat-autocomplete>
-
 
   <div matSuffix *ngIf="isLoading">
     <mat-spinner [diameter]="20"></mat-spinner>
