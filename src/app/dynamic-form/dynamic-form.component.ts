@@ -16,7 +16,7 @@ export class DynamicFormComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({});
-    this.config.forEach((control) => this.form.addControl(control.name, this.fb.control()));
+    // this.config.forEach((control) => this.form.addControl(control.name, this.fb.control()));
   }
 
   ngOnInit() {

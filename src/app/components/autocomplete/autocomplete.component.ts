@@ -55,6 +55,7 @@ export class AutocompleteComponent extends AutoComplete implements OnInit {
       return of([]);
     }
 
+    /*
     return this.apiService.getProdutos(searchText)
       .pipe(
         tap(() => this.searchFailed = false),
@@ -64,8 +65,8 @@ export class AutocompleteComponent extends AutoComplete implements OnInit {
           return of([]);
         })
       );
+      */
 
-    /*
     return this.http.get<any>(WIKI_URL, { params: PARAMS.set('search', searchText) })
       .pipe(
         map(response => response[1]),
@@ -75,7 +76,6 @@ export class AutocompleteComponent extends AutoComplete implements OnInit {
           return of([]);
         })
       );
-      */
   }
 
   displayWithFn(data?: any): string | undefined {
